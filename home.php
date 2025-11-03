@@ -6,15 +6,16 @@
 
 <br>
 <br>
-<a href="menu.html">Menu</a>
+<a href="menu.php">Menu</a>
 <br>
-<a href="orders.html">Orders</a>
+<a href="orders.php">Orders</a>
 <br>
-<a href="about.html">About us</a>
+<a href="about.php">About us</a>
 <br>
-<a href="login.html">Login</a>
+<a href="login.php">Login</a>
 
 
 
 </body>
+
 </html>
