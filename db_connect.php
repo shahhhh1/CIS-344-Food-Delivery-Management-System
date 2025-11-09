@@ -1,13 +1,17 @@
 <?php 
-$servername = "localhost";
-$username = "";
-$password = "rocklee7";
-$database = "rush_hour_food_delivery_service_llc";
+$db_server = "localhost";
+$db_user = "root";
+$password = "Whatever your password is";
+$db_name = "rush_hour_food_delivery_service_llc";
+$conn ="";
 
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($db_server, $db_user, $password, $db_name);
 
-if($conn->connect_error){
-    die("Connection failed: " . $conn->connect_error);
-
+if($conn)
+{
+    echo "You are connected";
 }
+    else{
+        echo "Can't connect";
+    }
 ?>
