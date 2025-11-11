@@ -1,5 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost","root","Rocklee7!","rush_hour_food_delivery_service_llc");
+$sql  = "INSERT INTO <your_table_name_here> (name, location) VALUES ('$username', '$address')";
 
 $msg = "";
 
@@ -41,4 +42,5 @@ if (isset($_POST['Login'])) {
     </form>
   </body>
 </html>
+
 
