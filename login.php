@@ -1,22 +1,27 @@
 <?php
-$conn = mysqli_connect("localhost","root","Rocklee7!","rush_hour_food_delivery_service_llc");
-$sql  = "INSERT INTO <your_table_name_here> (name, location) VALUES ('$username', '$address')";
+include("db_connect.php");
 
-$msg = "";
+$message = " ";
 
-if (isset($_POST['Login'])) {
-  $username = trim($_POST['username']);
+
+if (isset($_POST['Register'])) {
+  $name = trim($_POST['name']);
   $address  = trim($_POST['address']);
+  $phone  = trim($_POST['phone']);
+  $email = trim($_POST['email']);
 
-  if ($username === "" || $address === "") {
+  if ($name === "" || $address === ""|| $phone === ""|| $email === "") {
     $msg = "Please fill in all fields.";
   } else {
-    $username = mysqli_real_escape_string($conn, $username);
+    $name = mysqli_real_escape_string($conn, $name);
     $address  = mysqli_real_escape_string($conn, $address);
+    $phone  = mysqli_real_escape_string($conn, $phone);
+    $email  = mysqli_real_escape_string($conn, $email);
 
-    $sql = "INSERT INTO restaurants(name, location) VALUES ('$username', '$address')";
+    $sql = "INSERT INTO customers(name, email, phone, address ) VALUES ('$name','$email' ,'$address','$phone')";
     if (mysqli_query($conn, $sql)) {
-      $msg = "Restaurant saved.";
+      $msg = "Saved.";
+      
     } else {
       $msg = "Error: " . mysqli_error($conn);
     }
@@ -30,17 +35,25 @@ if (isset($_POST['Login'])) {
     <title>Login</title>
   </head>
   <body>
-    <?php if ($msg !== "") { echo "<p>$msg</p>"; } ?>
+    
     <form action="" method="post">
-      <label for="username">Restaurant Name:</label>
-      <input type="text" id="username" name="username" required>
+      <label for="name"> Name:</label>
+      <input type="text" id="name" name="name" required>
       <br><br>
-      <label for="address">Location:</label>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br><br>
+      <label for="address">Address:</label>
       <input type="text" id="address" name="address" required>
       <br><br>
-      <button type="submit" name="Login">Save</button>
-    </form>
+      <label for="phone">Phone number:</label>
+      <input type="number" id="phone" name="phone" required>
+      <br><br>
+     
+</form>
+
+<form action="home.php" method="post">
+      <button type="submit" name="Register">Register</button>
+</form>
   </body>
 </html>
-
-
