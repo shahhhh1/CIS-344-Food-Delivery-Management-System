@@ -2,7 +2,7 @@
 $db_server = "localhost";
 $db_user = "root";
 $password = "Whatever your password is";
-$db_name = "rush_hour";
+$db_name = "rush_hour_food_delivery_llc";
 $conn ="";
 
 $conn = new mysqli($db_server, $db_user, $password, $db_name);
@@ -15,4 +15,5 @@ if($conn)
         echo "Can't connect";
     }
 ?>
+
 
