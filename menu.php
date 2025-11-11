@@ -61,11 +61,12 @@
       if (total === 0) {
         alert('Your cart is empty!');
       } else {
-        alert(`Thank you for your purchase! Your total is $${total.toFixed(2)}.`);
-        total = 0;
-        totalDisplay.textContent = 'Total: $0.00';
+        localStorage.setItem('cartTotal', total.toFixed(2));
+        
+        window.location.href = 'checkout.php';
       }
     });
   </script>
 </body>
 </html>
+
