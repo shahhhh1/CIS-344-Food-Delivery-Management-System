@@ -8,8 +8,6 @@
 <br>
 <a href="menu.php">Menu</a>
 <br>
-<a href="orders.php">Orders</a>
-<br>
 <a href="about.php">About us</a>
 <br>
 <a href="login.php">Login</a>
@@ -19,5 +17,6 @@
 </body>
 
 </html>
+
 
 
